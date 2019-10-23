@@ -50,6 +50,7 @@ class Dog
             SELECT * FROM dogs WHERE name=?
           SQL
     dog_row = DB[:conn].execute(sql, args[:name])
+    puts dog_row
     dog = Dog.new_from_db(dog_row[0])
     return dog
   end
