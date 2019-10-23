@@ -54,9 +54,10 @@ class Dog
     dog_row = DB[:conn].execute(sql, args[:name], args[:breed])
     puts dog_row
     if (dog_row.count < 1)
+      dog = Dog.create(args)
     else
       dog = Dog.new_from_db(dog_row[0])
-  end
+    end
     puts dog.id
     return dog
   end
