@@ -52,6 +52,7 @@ class Dog
     dog_row = DB[:conn].execute(sql, args[:name], args[:breed])
     puts dog_row
     dog = Dog.new_from_db(dog_row[0])
+    puts dog.id
     return dog
   end
   def self.find_by_name(name)
