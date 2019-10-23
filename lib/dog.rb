@@ -7,7 +7,7 @@ class Dog
     sql = <<-SQL
             INSERT INTO dogs (name, breed) VALUES (?,?)
           SQL
-    @id = DB[:conn].execute(sql, @name, @breed)[0]
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM songs")[0][0]
     puts @id
     return self
   end
