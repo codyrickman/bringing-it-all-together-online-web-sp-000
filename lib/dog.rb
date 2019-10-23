@@ -8,6 +8,7 @@ class Dog
             INSERT INTO dogs (name, breed) VALUES (?,?)
           SQL
     @id = DB[:conn].execute(sql, @name, @breed)[0]
+    puts @id
     return self
   end
   def self.create_table
