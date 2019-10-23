@@ -55,7 +55,7 @@ class Dog
     puts dog_row
     if (dog_row.count < 1)
     else
-    dog = Dog.new_from_db(dog_row[0])
+      dog = Dog.new_from_db(dog_row[0])
   end
     puts dog.id
     return dog
