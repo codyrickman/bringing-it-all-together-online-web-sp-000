@@ -46,7 +46,6 @@ class Dog
     return dog
   end
   def self.find_or_create_by(args)
-
     sql = <<-SQL
             SELECT * FROM dogs WHERE name=?
           SQL
